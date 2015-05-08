@@ -101,10 +101,6 @@ class SourceFile(object):
                 "Expected text for 'contents', got {0}"
                 .format(type(contents)))
 
-        if origin and '..' in relpath.parts:
-            raise ValueError(
-                "relpath cannot contain ..: {0!r}".format(relpath))
-
         self.origin = origin
         self.relpath = relpath
         self.key = origin, relpath
